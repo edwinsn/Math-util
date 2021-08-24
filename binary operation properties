@@ -1,0 +1,24 @@
+#isAsociative receives the matrix M of an operation *, isAsociative
+#returns a bollean based on the asotivines of the operation *.
+import pandas as pd
+
+def isAssociative(M):
+    print("Analizando la matriz:\n\n {}\n"
+    .format(pd.DataFrame(M)))
+    associative=True
+    if(len(M)!=len(M[0])):
+        raise Exception("Matrix isn't square")
+    for i in range(len(M)):
+        for j in range(len(M)):
+            for k in range(len(M)):
+                right=M[i][M[j][k]]
+                left=M[M[i][j]][k]
+                #print("{}({}{})={}".format(i,j,k,right))
+                #print("({}{}){}={}".format(i,j,k,left))
+                if(left!=right):
+                    associative = False
+    return associative
+    
+Operation=[[0,1],[0,1]]
+
+print(isAssociative(Operation))
