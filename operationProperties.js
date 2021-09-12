@@ -21,8 +21,21 @@ function findE(M){
     return e
 }
 
-let M = [[0,1,2],[1,1,0],[0,1,1]]
-console.log(areInverses(M))
+//let M = [[0,1,2],[1,1,0],[0,1,1]]
+//console.log(areInverses(M))
 
-M = [[0,1,2],[1,1,0],[2,1,2]]
-console.log(areInverses(M))
+//M = [[0,1,2],[1,1,0],[2,1,2]]
+//console.log(areInverses(M))
+
+function isCommutative(M){
+
+    for(let i=0;i<M.length;i++){
+        for(let j=0;j<i;j++){
+            if(M[i][j]!=M[j][i]) return false
+        }
+    }
+    return true
+}
+
+//let M=[[1,0,1],[0,1,2],[1,2,3]]
+//console.log(isCommutative(M))
